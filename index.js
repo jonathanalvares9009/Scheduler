@@ -7,6 +7,10 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.post("/api/schedule-events", async (req, res) => {
   const schedules = req.body;
   if (schedules.length !== 10) {
